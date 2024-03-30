@@ -1,0 +1,15 @@
+.viewContainer {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+}
+
+.shadow {
+  position: absolute;
+  top: 2px;
+  width: 49px;
+  height: 45px;
+  background-color: var(--purple);
+  z-index: -2;
+  border-radius: 6px;
+}

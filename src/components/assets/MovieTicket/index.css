@@ -1,0 +1,15 @@
+.movieContainer {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+}
+
+.shadow {
+  position: absolute;
+  top: 2px;
+  width: 49px;
+  height: 45px;
+  background-color: var(--purple);
+  border-radius: 6px;
+  z-index: -2;
+}

@@ -1,3 +1,7 @@
+:root {
+  --purple: #554f95;
+}
+
 @font-face {
   font-family: "Inter";
   src: url("./fonts/Inter-Regular.ttf") format("truetype");
@@ -6,10 +10,9 @@
 }
 
 body {
-  margin: 0;
   display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  margin: 0;
   font-family: "Inter", sans-serif;
 }
