@@ -5,8 +5,30 @@ import "slick-carousel/slick/slick-theme.css";
 import Rating from "./Rating";
 import MovieTicket from "../MovieTicket";
 import View from "../View";
+import { useMovies } from "../../../services/query";
+import { useEffect } from "react";
+import { useImgURLStore } from "../../../zustand/store";
 
 function HomeSlider() {
+  const moviesQuery = useMovies();
+  const moviesData = moviesQuery?.data?.data?.movies.filter(
+    (movie) => movie.featured
+  );
+
+  const setImgURL = useImgURLStore((state) => state.setImgURL);
+
+  const randomNumber =
+    moviesData && Math.floor(Math.random() * moviesData?.length);
+
+  useEffect(() => {
+    const movie = moviesData && moviesData[0];
+
+    if (movie?.images[randomNumber!]) {
+      setImgURL(movie.images[randomNumber!]);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [moviesQuery?.dataUpdatedAt]);
+
   const settings = {
     infinite: false,
     fade: true,
@@ -14,62 +36,41 @@ function HomeSlider() {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
-  };
-
-  const style = {
-    backgroundImage:
-      "url('https://s.yimg.com/ny/api/res/1.2/KAcBiAjfBGsEsOhT0fbw7w--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTEzOTE7Y2Y9d2VicA--/https://media.zenfs.com/en/homerun/feed_manager_auto_publish_494/d05a3f087fa57f6d41b865d53a42a5f5')",
-  };
-
-  const style2 = {
-    ...style,
-    backgroundImage:
-      "url('https://s.yimg.com/ny/api/res/1.2/2jMCrfKnzm47Cu2e11TuOw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTEzNzc7Y2Y9d2VicA--/https://media.zenfs.com/en/homerun/feed_manager_auto_publish_494/842825d1a8f5526a10befa7c6c8f4756')",
+    afterChange: (current: number) => {
+      const movie = moviesData && moviesData[current];
+      if (movie?.images[randomNumber!]) {
+        setImgURL(movie?.images[randomNumber!]);
+      }
+    },
   };
 
   return (
     <div className="sliderContainer">
       <Slider {...settings}>
-        <div className="cardContainer">
-          <Rating rating={8} />
-          <div className="image" style={style} />
-          <div className="movieAndBuyContainer">
-            <div className="movieInfo">
-              <h2>John Wick 4</h2>
-              <p>
-                After the devastating events of Avengers: Infinity War (2018),
-                the universe is in ruins. With the help of remaining allies, the
-                Avengers assemble once more in order to reverse Thanos' actions
-                and restore balance to the universe.
-              </p>
+        {moviesData?.map((movie) => {
+          return (
+            <div className="cardContainer">
+              <Rating rating={movie.rating} />
+              <div
+                className="image"
+                style={{
+                  backgroundImage: `url(${movie.poster})`,
+                }}
+              />
+              <div className="movieAndBuyContainer">
+                <div className="movieInfo">
+                  <h2>{movie.title}</h2>
+                  <p>{movie.description}</p>
+                </div>
+                <h1>{movie.title}</h1>
+                <div className="buttonsContainer">
+                  <MovieTicket text={true} />
+                  <View />
+                </div>
+              </div>
             </div>
-            <h1>John Wick 4</h1>
-            <div className="buttonsContainer">
-              <MovieTicket text={true} />
-              <View />
-            </div>
-          </div>
-        </div>
-        <div className="cardContainer">
-          <Rating rating={8} />
-          <div className="image" style={style2} />
-          <div className="movieAndBuyContainer">
-            <div className="movieInfo">
-              <h2>John Wick 4</h2>
-              <p>
-                After the devastating events of Avengers: Infinity War (2018),
-                the universe is in ruins. With the help of remaining allies, the
-                Avengers assemble once more in order to reverse Thanos' actions
-                and restore balance to the universe.
-              </p>
-            </div>
-            <h1>John Wick 4</h1>
-            <div className="buttonsContainer">
-              <MovieTicket text={true} />
-              <View />
-            </div>
-          </div>
-        </div>
+          );
+        })}
       </Slider>
     </div>
   );
