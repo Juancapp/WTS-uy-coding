@@ -1,0 +1,7 @@
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1em 0.3em;
+  background-color: darkslategray;
+}

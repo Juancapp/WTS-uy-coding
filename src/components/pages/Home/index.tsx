@@ -1,5 +1,12 @@
+import HomeSlider from "../../assets/HomeSlider";
+import "./index.css";
+
 function Home() {
-  return <div>Home</div>;
+  return (
+    <div className="homeContainer">
+      <HomeSlider />
+    </div>
+  );
 }
 
 export default Home;
