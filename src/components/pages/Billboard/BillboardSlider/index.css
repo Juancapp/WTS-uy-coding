@@ -1,0 +1,17 @@
+@media only screen and (min-width: 768px) {
+  .billImage {
+    height: 30em;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .slick-slider {
+    height: 100% !important;
+    width: 100%;
+  }
+
+  .slick-slide > div {
+    display: flex;
+    flex-direction: column;
+  }
+}

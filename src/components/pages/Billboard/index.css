@@ -1,0 +1,21 @@
+.billContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #2a303c;
+  position: relative;
+  padding-inline: 2em;
+}
+
+.billContainer > h1 {
+  display: inline-block;
+  align-self: start;
+  font-weight: bold;
+  margin-left: 40px;
+}
+
+.billboardPopCorn {
+  position: absolute;
+  transform: translateY(-220px);
+  right: 0;
+}

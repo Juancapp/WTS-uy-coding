@@ -1,8 +1,11 @@
 .navContainer {
   display: flex;
   justify-content: space-between;
+  position: fixed;
   padding: 5px 10px;
+  width: 100%;
   background-color: #1c1c1c;
   opacity: 0.9;
   box-sizing: border-box;
+  z-index: 2;
 }

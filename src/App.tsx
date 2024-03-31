@@ -1,20 +1,27 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import RedirectToHome from "./components/redirect";
+/* eslint-disable react-hooks/exhaustive-deps */
 import Navbar from "./components/layout/Navbar";
 import "./App.css";
 import Home from "./components/pages/Home";
+import Billboard from "./components/pages/Billboard";
+import { useMovies } from "./services/query";
+import { useEffect } from "react";
+import { useMoviesStore } from "./zustand/store";
 
 function App() {
+  const moviesQuery = useMovies();
+  const setMoviesData = useMoviesStore((state) => state.setMoviesData);
+
+  useEffect(() => {
+    if (moviesQuery.isSuccess) {
+      setMoviesData(moviesQuery?.data?.data?.movies);
+    }
+  }, [moviesQuery?.dataUpdatedAt]);
+
   return (
     <div className="appContainer">
       <Navbar />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<RedirectToHome />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/billboard" element={<h1>Billboard</h1>} />
-        </Routes>
-      </BrowserRouter>
+      <Home />
+      <Billboard />
     </div>
   );
 }

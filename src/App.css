@@ -5,7 +5,5 @@
 .appContainer {
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  min-height: 100vh;
   overflow-x: hidden;
 }

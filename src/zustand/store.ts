@@ -1,11 +1,7 @@
 import { create } from "zustand";
+import { MoviesStoreType } from "./types";
 
-export interface ImgStoreType {
-  imgURL: string;
-  setImgURL: (imgURL: string) => void;
-}
-
-export const useImgURLStore = create<ImgStoreType>((set) => ({
-  imgURL: "",
-  setImgURL: (imgURL) => set({ imgURL: imgURL }),
+export const useMoviesStore = create<MoviesStoreType>((set) => ({
+  moviesData: [],
+  setMoviesData: (moviesData) => set({ moviesData: moviesData }),
 }));
