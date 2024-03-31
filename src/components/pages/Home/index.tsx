@@ -8,14 +8,14 @@ function Home() {
   useEffect(() => {}, [imgURL]);
 
   return (
-    <div
+    <section
       className="homeContainer"
       style={{
         backgroundImage: `url(${imgURL})`,
       }}
     >
       <HomeSlider setImgURL={setImgURL} />
-    </div>
+    </section>
   );
 }
 

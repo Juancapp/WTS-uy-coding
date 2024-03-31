@@ -3,11 +3,11 @@ import "./index.css";
 
 function Billboard() {
   return (
-    <div className="billContainer">
+    <section className="billContainer">
       <img src="./images/billboardPopCorn.png" className="billboardPopCorn" />
       <h1>En cartelera</h1>
       <BillboardSlider />
-    </div>
+    </section>
   );
 }
 

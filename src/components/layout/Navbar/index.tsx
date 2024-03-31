@@ -3,10 +3,10 @@ import "./index.css";
 
 function Navbar() {
   return (
-    <div className="navContainer">
+    <nav className="navContainer">
       <img src="/images/logo.png" alt="dream view" />
       <MovieTicket />
-    </div>
+    </nav>
   );
 }
 
