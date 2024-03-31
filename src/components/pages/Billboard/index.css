@@ -4,7 +4,7 @@
   align-items: center;
   background-color: #2a303c;
   position: relative;
-  padding-inline: 2em;
+  padding: 0.2em 0 2em 0em;
 }
 
 .billContainer > h1 {
@@ -12,10 +12,32 @@
   align-self: start;
   font-weight: bold;
   margin-left: 40px;
+  margin-bottom: 20px;
+  z-index: 1;
 }
 
 .billboardPopCorn {
   position: absolute;
-  transform: translateY(-220px);
+  transform: translateY(-8em);
+  z-index: 0;
   right: 0;
+}
+
+.sliderCardContainer {
+  padding-right: 40px;
+}
+
+@media only screen and (min-width: 768px) {
+  .billContainer {
+    padding-block: 3em;
+    padding-inline: 2em;
+  }
+
+  .billContainer > h1 {
+    margin-bottom: 60px;
+  }
+
+  .billboardPopCorn {
+    transform: translateY(90px);
+  }
 }
