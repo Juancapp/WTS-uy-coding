@@ -65,7 +65,7 @@ function HomeSlider({
               <h1>{movie.title}</h1>
               <div className="buttonsContainer">
                 <MovieTicket title={movie.title} text={true} />
-                <View />
+                <View url={movie.url} />
               </div>
             </div>
           </div>
