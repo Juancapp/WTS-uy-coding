@@ -40,10 +40,6 @@ function BillboardSlider() {
     };
   }, []);
 
-  useEffect(() => {
-    console.log(width);
-  }, [width]);
-
   const moviesData = useMoviesStore((state) => state.moviesData);
 
   const [moviesArrays, setMoviesArrays] = useState<MovieType[][]>([]);

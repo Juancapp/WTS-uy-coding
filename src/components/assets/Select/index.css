@@ -1,0 +1,53 @@
+.selectWrapper {
+  width: 100%;
+  font-size: 14px;
+  position: relative;
+}
+
+.selectWrapper label {
+  color: white;
+  background: var(--dark-gray);
+  padding: 0 10px;
+  margin-left: 12px;
+  z-index: 1;
+}
+
+.selectContainer {
+  width: 100%;
+  background: var(--dark-gray);
+  border-radius: 8px;
+  color: white;
+  padding: 10px;
+  border: 3px solid var(--purple);
+  margin-top: -10px;
+  box-sizing: border-box;
+}
+
+.selectContainer select {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: white;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 100%;
+  font-size: 18px;
+  padding-block: 8px;
+  padding-right: 40px;
+}
+
+.selectContainer::after {
+  content: "▼";
+  font-size: 20px;
+  position: absolute;
+  top: 24px;
+  right: 17px;
+  color: white;
+  pointer-events: none;
+}
+
+.selectContainer select:focus {
+  background: var(--dark-gray);
+}

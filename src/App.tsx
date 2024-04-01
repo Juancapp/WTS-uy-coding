@@ -6,6 +6,7 @@ import Billboard from "./components/pages/Billboard";
 import { useMovies } from "./services/query";
 import { useEffect } from "react";
 import { useMoviesStore } from "./zustand/store";
+import Purchase from "./components/pages/Purchase";
 
 function App() {
   const moviesQuery = useMovies();
@@ -22,6 +23,7 @@ function App() {
       <Navbar />
       <Home />
       <Billboard />
+      <Purchase />
     </div>
   );
 }
