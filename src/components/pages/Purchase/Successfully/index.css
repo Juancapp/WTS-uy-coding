@@ -1,0 +1,30 @@
+.ticket {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.ticket img {
+  margin-block: 30px;
+}
+
+.ticket p {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+  margin: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .ticket {
+    width: 23%;
+  }
+
+  .ticket img {
+    margin: 0;
+  }
+}

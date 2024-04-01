@@ -26,6 +26,7 @@ function TelephoneInput({
   const onSubmit = (data: any) => {
     const dataToSend = data as InformationFormProps;
     setName(dataToSend.name.split(" ")[0]);
+    setPurchaseState(PurchaseStateEnum?.PURCHASE_SUCCESSFULLY);
   };
 
   const handleResetClick = () => {
