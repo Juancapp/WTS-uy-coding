@@ -1,23 +1,24 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useForm, Controller } from "react-hook-form";
-import { PurchaseFormProps } from "../types";
+import { PurchaseFormProps, PurchaseStateEnum } from "../types";
 import Select from "../../../assets/Select";
-import { useMoviesStore } from "../../../../zustand/store";
+import {
+  useMoviesStore,
+  usePurchaseStateStore,
+} from "../../../../zustand/store";
 import { datesArr } from "../../../../helpers/date";
 import { seatsArr } from "../../../../helpers/seats";
 import { compareAsc, parse } from "date-fns";
-import { Dispatch, SetStateAction, useEffect } from "react";
+import { useEffect } from "react";
 import "./index.css";
 import Button from "../../../assets/Button";
 import { ButtonVariantEnum } from "../../../assets/Button/types";
 
-function PurchaseForm({
-  selectedMovie,
-  setSelectedMovie,
-}: {
-  selectedMovie: PurchaseFormProps;
-  setSelectedMovie: Dispatch<SetStateAction<PurchaseFormProps>>;
-}) {
-  const moviesData = useMoviesStore((state) => state.moviesData);
+function PurchaseForm() {
+  const { moviesData, selectedMovie, setSelectedMovie } = useMoviesStore(
+    (state) => state
+  );
+  const { setPurchaseState } = usePurchaseStateStore((state) => state);
 
   const formattedDatesArr = datesArr.sort((a, b) =>
     compareAsc(
@@ -50,6 +51,7 @@ function PurchaseForm({
 
   const onSubmit = (data: PurchaseFormProps) => {
     setSelectedMovie(data);
+    setPurchaseState(PurchaseStateEnum.PERSONAL_INFO_FORM);
   };
 
   const handleResetClick = () => {
@@ -71,6 +73,12 @@ function PurchaseForm({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [moviesData.length]);
+
+  useEffect(() => {
+    if (selectedMovie.title.length) {
+      setValue("title", selectedMovie.title);
+    }
+  }, [selectedMovie.title]);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="purchaseForm">

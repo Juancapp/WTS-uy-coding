@@ -1,21 +1,13 @@
-import { useEffect, useState } from "react";
 import "./index.css";
-import { PurchaseFormProps, PurchaseStateEnum } from "./types";
+import { PurchaseStateEnum } from "./types";
 import PurchaseForm from "./PurchaseForm";
+import { usePurchaseStateStore } from "../../../zustand/store";
 
 function Purchase() {
-  const [purchaseState, setPurchaseState] = useState<PurchaseStateEnum>(
-    PurchaseStateEnum.MOVIE_FORM
-  );
-
-  const [selectedMovie, setSelectedMovie] = useState<PurchaseFormProps>({
-    title: "",
-    date: "",
-    place: "",
-  });
+  const { purchaseState } = usePurchaseStateStore((state) => state);
 
   return (
-    <section className="purchaseContainer">
+    <section className="purchaseContainer" id="purchase">
       <div>
         <h1>Comprar Ticket</h1>
         <h2>Selecciona una función</h2>
@@ -27,12 +19,7 @@ function Purchase() {
           <img className="popcornImg" src="./images/popcorn.png" />
         </>
       )}
-      {purchaseState === PurchaseStateEnum.MOVIE_FORM && (
-        <PurchaseForm
-          selectedMovie={selectedMovie}
-          setSelectedMovie={setSelectedMovie}
-        />
-      )}
+      {purchaseState === PurchaseStateEnum.MOVIE_FORM && <PurchaseForm />}
     </section>
   );
 }
