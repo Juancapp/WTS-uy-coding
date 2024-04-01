@@ -1,10 +1,4 @@
-.transparentButton {
-  color: white;
-  transition: border-color 0.5s ease;
-}
-
 .confirmButton {
-  background-color: var(--dark-gray);
   width: 237px;
   height: 60px;
   border: 3px solid var(--purple);
@@ -12,13 +6,31 @@
   cursor: pointer;
 }
 
+.transparentButton {
+  color: white;
+  background-color: var(--dark-gray);
+  transition: border-color 0.5s ease;
+}
+
 .transparentButton:hover {
-  border-color: #a8a3d8;
+  border-color: var(--light-purple);
 }
 
 .greenButton {
   background-color: #91c870;
-  color: transparent;
+  color: var(--dark-gray);
+  transition: background-color 0.5s ease;
+}
+
+.greenButton:hover {
+  background-color: #5a8d48;
+  color: #ffffff;
+}
+
+.greenButton:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
 }
 
 .borderNoneButton {

@@ -8,6 +8,7 @@
   color: white;
   background: var(--dark-gray);
   padding: 0 10px;
+  padding-right: 28px;
   margin-left: 12px;
   z-index: 1;
 }
@@ -15,7 +16,7 @@
 .selectContainer {
   width: 100%;
   background: var(--dark-gray);
-  border-radius: 8px;
+  border-radius: 6px;
   color: white;
   padding: 10px;
   border: 3px solid var(--purple);

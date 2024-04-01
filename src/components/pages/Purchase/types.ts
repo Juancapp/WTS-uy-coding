@@ -9,3 +9,9 @@ export interface PurchaseFormProps {
   date: string;
   place: string;
 }
+
+export interface InformationFormProps {
+  name: string;
+  email: string;
+  phone: string;
+}

@@ -1,18 +1,18 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useForm, Controller } from "react-hook-form";
-import { PurchaseFormProps, PurchaseStateEnum } from "../types";
-import Select from "../../../assets/Select";
+import { compareAsc, parse } from "date-fns";
+import { datesArr } from "../../../../../helpers/date";
 import {
   useMoviesStore,
   usePurchaseStateStore,
-} from "../../../../zustand/store";
-import { datesArr } from "../../../../helpers/date";
-import { seatsArr } from "../../../../helpers/seats";
-import { compareAsc, parse } from "date-fns";
+} from "../../../../../zustand/store";
+import { seatsArr } from "../../../../../helpers/seats";
+import { PurchaseFormProps, PurchaseStateEnum } from "../../types";
+import { Controller, useForm } from "react-hook-form";
 import { useEffect } from "react";
-import "./index.css";
-import Button from "../../../assets/Button";
-import { ButtonVariantEnum } from "../../../assets/Button/types";
+import Select from "../../../../assets/Select";
+import Button from "../../../../assets/Button";
+import { ButtonVariantEnum } from "../../../../assets/Button/types";
+import "../index.css";
 
 function PurchaseForm() {
   const { moviesData, selectedMovie, setSelectedMovie } = useMoviesStore(
@@ -81,7 +81,7 @@ function PurchaseForm() {
   }, [selectedMovie.title]);
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="purchaseForm">
+    <form onSubmit={handleSubmit(onSubmit)} className="form">
       <Controller
         name="title"
         control={control}
