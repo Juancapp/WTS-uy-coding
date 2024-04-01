@@ -96,6 +96,14 @@ function TelephoneInput({
               value: 11,
               message: "El número telefónico debe tener al menos 9 caracteres",
             },
+            validate: {
+              initialNumbers: (value) => {
+                const condition =
+                  (value[0] === "0" && value[1] === "9") ||
+                  "Teléfono debe tener formato: 09x-xxx-xxx";
+                return condition;
+              },
+            },
           }}
           render={({ field }) => (
             <InputMask
