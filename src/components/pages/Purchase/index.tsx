@@ -10,11 +10,12 @@ function Purchase() {
   const { date } = useMoviesStore((state) => state.selectedMovie);
   const [name, setName] = useState<string>();
 
-  useEffect(() => {
-    console.log(date.slice(0, 10));
+  //Voy a dejar eso acá para mañana:
+  // useEffect(() => {
+  //   console.log(date.slice(0, 10));
 
-    console.log(date.slice(-5));
-  }, [date]);
+  //   console.log(date.slice(-5));
+  // }, [date]);
 
   return (
     <section className="purchaseContainer" id="purchase">
