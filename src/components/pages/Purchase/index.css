@@ -1,19 +1,12 @@
 .purchaseContainer {
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-items: center;
+  justify-content: center;
+  gap: 12px;
   position: relative;
-  padding: 13em 20px;
   background-color: var(--dark-gray);
+  padding-block: 2em;
   z-index: 1;
-}
-
-.purchaseContainer > div {
-  position: absolute;
-  top: 7em;
-  left: 0;
-  margin-left: 20px;
 }
 
 .purchaseContainer > div > h1 {
@@ -47,12 +40,6 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .purchaseContainer {
-    padding-top: 10%;
-    justify-content: center;
-    align-items: center;
-  }
-
   .bucketImg {
     display: inline-block;
     position: absolute;
@@ -62,9 +49,7 @@
   }
 
   .purchaseContainer > div {
-    position: absolute;
-    top: 5em;
-    left: 0;
-    margin-left: 40px;
+    margin-top: auto;
+    margin-left: 3%;
   }
 }
