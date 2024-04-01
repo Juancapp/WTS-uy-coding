@@ -6,14 +6,15 @@ function MovieTicket({
   title,
 }: {
   text?: boolean;
-  title: string;
+  title?: string;
 }) {
   const { setSelectedMovie, selectedMovie } = useMoviesStore((state) => state);
 
   const handleClick = () => {
-    if (!text) return;
+    if (title) {
+      setSelectedMovie({ ...selectedMovie, title: title });
+    }
 
-    setSelectedMovie({ ...selectedMovie, title: title });
     window.location.href = "#purchase";
   };
 

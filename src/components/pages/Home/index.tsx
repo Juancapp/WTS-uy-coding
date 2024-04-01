@@ -9,6 +9,7 @@ function Home() {
 
   return (
     <section
+      id="home"
       className="homeContainer"
       style={{
         backgroundImage: `url(${imgURL})`,

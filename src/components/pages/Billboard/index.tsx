@@ -3,7 +3,7 @@ import "./index.css";
 
 function Billboard() {
   return (
-    <section className="billContainer">
+    <section id="billboard" className="billContainer">
       <img src="./images/billboardPopCorn.png" className="billboardPopCorn" />
       <h1>En cartelera</h1>
       <BillboardSlider />
