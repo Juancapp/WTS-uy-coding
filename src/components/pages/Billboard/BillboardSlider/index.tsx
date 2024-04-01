@@ -9,6 +9,7 @@ import Card from "../Card";
 
 function BillboardSlider() {
   const [width, setWidth] = useState(window.innerWidth);
+  const [isSwiping, setIsSwiping] = useState<boolean>(false);
 
   const settings = {
     infinite: true,
@@ -16,6 +17,12 @@ function BillboardSlider() {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
+    beforeChange: () => {
+      setIsSwiping(true);
+    },
+    afterChange: () => {
+      setIsSwiping(false);
+    },
   };
 
   const mobileSettings = {
@@ -66,12 +73,12 @@ function BillboardSlider() {
     <Slider {...settingsToComponents}>
       {width > 768
         ? moviesArrays.map((moviesData) => {
-            return <CardsContainer data={moviesData} />;
+            return <CardsContainer isSwiping={isSwiping} data={moviesData} />;
           })
         : moviesData?.map((movie) => {
             return (
               <div className="sliderCardContainer">
-                <Card movieData={movie} />
+                <Card isSwiping={isSwiping} movieData={movie} />
               </div>
             );
           })}
