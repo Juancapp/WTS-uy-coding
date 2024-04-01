@@ -18,14 +18,18 @@ h1 {
   transform: translateY(-120px) !important;
 }
 
-.slick-prev:before,
-.slick-next:before {
+.slick-prev::before,
+.slick-next::before {
   font-family: "Inter", sans-serif !important;
   font-size: 50px !important;
 }
 
-.slick-disabled {
-  display: none !important;
+.slick-next:before {
+  content: ">" !important;
+}
+
+.slick-prev:before {
+  content: "<" !important;
 }
 
 .slick-list {
