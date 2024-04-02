@@ -4,7 +4,7 @@ import "./index.css";
 import Button from "../../assets/Button";
 import { ButtonVariantEnum } from "../../assets/Button/types";
 import { usePurchaseStateStore } from "../../../zustand/store";
-import { PurchaseStateEnum } from "../../pages/Purchase/types";
+import { PurchaseStateEnum } from "../../sections/Purchase/types";
 
 function Navbar() {
   const { setPurchaseState } = usePurchaseStateStore((state) => state);

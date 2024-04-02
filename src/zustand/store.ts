@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { MoviesStoreType, PurchaseStoreType } from "./types";
-import { PurchaseStateEnum } from "../components/pages/Purchase/types";
+import { PurchaseStateEnum } from "../components/sections/Purchase/types";
 
 export const useMoviesStore = create<MoviesStoreType>((set) => ({
   moviesData: [],

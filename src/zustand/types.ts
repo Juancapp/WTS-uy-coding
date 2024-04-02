@@ -1,7 +1,7 @@
 import {
   PurchaseFormProps,
   PurchaseStateEnum,
-} from "../components/pages/Purchase/types";
+} from "../components/sections/Purchase/types";
 import { MovieType } from "../types";
 
 export interface MoviesStoreType {
