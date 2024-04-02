@@ -3,8 +3,12 @@ import MovieTicket from "../../assets/MovieTicket";
 import "./index.css";
 import Button from "../../assets/Button";
 import { ButtonVariantEnum } from "../../assets/Button/types";
+import { usePurchaseStateStore } from "../../../zustand/store";
+import { PurchaseStateEnum } from "../../pages/Purchase/types";
 
 function Navbar() {
+  const { setPurchaseState } = usePurchaseStateStore((state) => state);
+
   const [isFeaturedClicked, setIsFeaturedClicked] = useState(true);
   const [isFeaturedHovered, setIsFeaturedHovered] = useState(true);
 
@@ -18,33 +22,47 @@ function Navbar() {
     window.location.href = "#billboard";
   };
 
+  const handlePurchaseClick = () => {
+    window.location.href = "#purchase";
+    setPurchaseState(PurchaseStateEnum.MOVIE_FORM);
+  };
+
+  const buttonOptions = [
+    {
+      text: "Destacadas",
+      onMouseEnter: () => setIsFeaturedHovered(true),
+      onMouseLeave: () => !isFeaturedClicked && setIsFeaturedHovered(false),
+      onClick: handleFeaturedClick,
+    },
+    {
+      text: "Cartelera",
+      onMouseEnter: () => setIsFeaturedHovered(false),
+      onMouseLeave: () => isFeaturedClicked && setIsFeaturedHovered(true),
+      onClick: handleBillboardClick,
+    },
+  ];
+
   return (
     <nav className="navContainer">
       <img src="/images/logo.png" alt="dream view" />
       <div className="navRightButtonsWrapper">
-        <button
-          className={`${
-            isFeaturedHovered ? "selectedButton" : "nonSelectedButton"
-          } basisButton`}
-          onMouseEnter={() => setIsFeaturedHovered(true)}
-          onMouseLeave={() => !isFeaturedClicked && setIsFeaturedHovered(false)}
-          onClick={handleFeaturedClick}
-        >
-          Destacadas
-        </button>
-        <button
-          className={`${
-            !isFeaturedHovered ? "selectedButton" : "nonSelectedButton"
-          } basisButton`}
-          onMouseEnter={() => setIsFeaturedHovered(false)}
-          onMouseLeave={() => isFeaturedClicked && setIsFeaturedHovered(true)}
-          onClick={handleBillboardClick}
-        >
-          Cartelera
-        </button>
+        {buttonOptions.map((option) => {
+          return (
+            <button
+              className={`${
+                isFeaturedHovered ? "selectedButton" : "nonSelectedButton"
+              } basisButton`}
+              onMouseEnter={option.onMouseEnter}
+              onMouseLeave={option.onMouseLeave}
+              onClick={option.onClick}
+            >
+              {option.text}
+            </button>
+          );
+        })}
         <Button
           variant={ButtonVariantEnum.PURPLE}
-          onClick={() => (window.location.href = "#purchase")}
+          onClick={handlePurchaseClick}
         >
           Comprar ticket
         </Button>

@@ -14,7 +14,7 @@ export function getRandomInt(min: number, max: number) {
 }
 
 const start = new Date();
-const end = new Date(2024, 3, 20);
+const end = new Date(2024, 4, 20);
 
 const diffDays = differenceInDays(end, start);
 
