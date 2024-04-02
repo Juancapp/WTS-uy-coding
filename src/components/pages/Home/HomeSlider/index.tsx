@@ -30,11 +30,14 @@ function HomeSlider({
   }, [moviesData?.length]);
 
   const settings = {
-    infinite: false,
+    infinite: true,
     fade: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 7000,
+    pauseOnHover: false,
     arrows: true,
     beforeChange: (_current: number, next: number) => {
       const movie = moviesData && moviesData[next];

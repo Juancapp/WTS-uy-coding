@@ -19,7 +19,7 @@
   background: var(--dark-gray);
   border-radius: 6px;
   color: white;
-  padding: 10px;
+  padding: 10px 0;
   border: 3px solid var(--purple);
   margin-top: -10px;
   box-sizing: border-box;
@@ -36,8 +36,8 @@
   appearance: none;
   height: 100%;
   font-size: 18px;
+  padding-left: 10px;
   padding-block: 8px;
-  padding-right: 40px;
   cursor: pointer;
 }
 
