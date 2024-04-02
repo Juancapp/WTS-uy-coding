@@ -7,7 +7,7 @@ import { InformationFormProps, PurchaseStateEnum } from "../../types";
 import { usePurchaseStateStore } from "../../../../../zustand/store";
 import { Dispatch, SetStateAction } from "react";
 
-function TelephoneInput({
+function InformationForm({
   setName,
 }: {
   setName: Dispatch<SetStateAction<string | undefined>>;
@@ -138,4 +138,4 @@ function TelephoneInput({
   );
 }
 
-export default TelephoneInput;
+export default InformationForm;
