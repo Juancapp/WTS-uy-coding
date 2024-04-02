@@ -2,16 +2,16 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  top: 0;
-  left: 0;
-  z-index: 20;
+  align-items: center;
   width: 69px;
   height: 58.66px;
-  padding-block: 2px;
+  top: 0;
+  left: 0;
   background-color: var(--purple);
   border-radius: 6px;
+  z-index: 20;
+  padding-block: 2px;
 }
 
 .rating p,
@@ -25,14 +25,14 @@
   font-weight: bold;
 }
 
-.rating > span:last-child {
-  font-size: 12px;
-  font-weight: bold;
-}
-
 .rating span span {
   font-size: 12px;
   font-weight: 400;
+}
+
+.rating > span:last-child {
+  font-size: 12px;
+  font-weight: bold;
 }
 
 @media only screen and (min-width: 768px) {

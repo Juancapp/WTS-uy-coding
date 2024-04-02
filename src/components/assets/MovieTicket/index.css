@@ -11,17 +11,17 @@
 
 .shadow {
   position: absolute;
-  top: 2px;
-  z-index: -2;
   width: 49px;
   height: 45px;
+  top: 2px;
   background-color: var(--purple);
   border-radius: 6px;
+  z-index: -2;
 }
 
 .movieContainer p {
   margin: 0;
+  color: white;
   font-size: 18px;
   font-weight: 300;
-  color: white;
 }

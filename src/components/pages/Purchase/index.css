@@ -1,10 +1,10 @@
 .purchaseContainer {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
-  position: relative;
   background-color: var(--dark-gray);
+  gap: 20px;
   padding-block: 4em;
   z-index: 1;
   padding-inline: 6%;
@@ -31,21 +31,21 @@
 }
 
 .purchaseContainer > div > h1 {
-  font-size: 32px;
   margin-bottom: 8px;
+  font-size: 32px;
   font-weight: bold;
 }
 
 .purchaseContainer > div > h2 {
+  margin-bottom: 8px;
   color: white;
   font-size: 18px;
   font-weight: 300;
-  margin-bottom: 8px;
 }
 
 .purchaseContainer > div:first-child h2.successSubtitle {
-  color: #8d8d8d;
   order: 0;
+  color: #8d8d8d;
   font-weight: bold;
 }
 
@@ -58,11 +58,11 @@
 }
 
 .mobilePopcornImg {
-  display: inline-block;
   position: absolute;
-  z-index: -1;
-  bottom: 0;
+  display: inline-block;
   right: 0;
+  bottom: 0;
+  z-index: -1;
 }
 
 @media only screen and (min-width: 768px) {
@@ -82,8 +82,8 @@
   }
 
   .bucketImg {
-    display: inline-block;
     position: absolute;
+    display: inline-block;
     bottom: 0;
     left: 0;
     z-index: -1;

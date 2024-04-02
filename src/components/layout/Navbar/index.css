@@ -1,9 +1,9 @@
 .navContainer {
+  position: fixed;
   display: flex;
   justify-content: space-between;
-  position: fixed;
-  padding: 7px 20px;
   width: 100%;
+  padding: 7px 20px;
   background-color: rgba(28, 28, 28, 0.9);
   box-sizing: border-box;
   z-index: 2;
@@ -15,9 +15,9 @@
 
 .basisButton {
   background-color: transparent;
-  font-weight: 100;
-  font-size: 18px;
   border: none;
+  font-size: 18px;
+  font-weight: 100;
   cursor: pointer;
   transition: color 0.5s ease;
 }

@@ -1,9 +1,9 @@
 @media only screen and (min-width: 768px) {
   .cardsContainer {
+    display: grid;
+    align-self: center;
     width: 80%;
     height: fit-content;
-    align-self: center;
-    display: grid;
     justify-items: center;
     grid-template-columns: repeat(5, 1fr);
     gap: 30px;

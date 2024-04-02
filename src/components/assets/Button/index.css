@@ -7,8 +7,8 @@
 }
 
 .transparentButton {
-  color: white;
   background-color: var(--dark-gray);
+  color: white;
   transition: border-color 0.5s ease;
 }
 
@@ -38,9 +38,9 @@
 }
 
 .borderNoneButton {
-  color: #a9a9a9;
   background-color: transparent;
   border: none;
+  color: #a9a9a9;
   cursor: pointer;
   transition: color 0.5s ease;
 }
@@ -58,13 +58,13 @@
     display: inline-block;
     height: 100%;
     padding: 12px 40px;
-    font-weight: lighter;
-    box-sizing: border-box;
-    border-radius: 6px;
-    cursor: pointer;
     background-color: var(--purple);
     border: none;
+    border-radius: 6px;
     color: white;
+    font-weight: lighter;
+    box-sizing: border-box;
+    cursor: pointer;
     transition: background-color 0.5s ease;
   }
 
