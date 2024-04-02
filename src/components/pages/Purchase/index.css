@@ -39,13 +39,14 @@
 .purchaseContainer > div > h2 {
   color: white;
   font-size: 18px;
-  font-weight: 100;
+  font-weight: 300;
   margin-bottom: 8px;
 }
 
 .purchaseContainer > div:first-child h2.successSubtitle {
   color: #8d8d8d;
   order: 0;
+  font-weight: bold;
 }
 
 .bucketImg {
@@ -53,15 +54,31 @@
 }
 
 .popcornImg {
+  display: none;
+}
+
+.mobilePopcornImg {
+  display: inline-block;
   position: absolute;
-  right: 0;
-  bottom: 0;
   z-index: -1;
+  bottom: 0;
+  right: 0;
 }
 
 @media only screen and (min-width: 768px) {
   .purchaseContainer {
     padding-inline: 3%;
+  }
+
+  .mobilePopcornImg {
+    display: none;
+  }
+
+  .popcornImg {
+    position: absolute;
+    display: inline-block;
+    right: 0;
+    z-index: -1;
   }
 
   .bucketImg {

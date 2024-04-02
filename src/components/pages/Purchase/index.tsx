@@ -53,6 +53,7 @@ function Purchase() {
         <>
           <img className="bucketImg" src="./images/bucket.png" />
           <img className="popcornImg" src="./images/popcorn.png" />
+          <img className="mobilePopcornImg" src="./images/mobilePopcorn.png" />
         </>
       )}
       {purchaseState === PurchaseStateEnum.MOVIE_FORM && <PurchaseForm />}

@@ -69,6 +69,6 @@
   }
 
   .purpleButton:hover {
-    background-color: #403880;
+    background-color: var(--dark-purple);
   }
 }
