@@ -46,13 +46,19 @@ function Navbar() {
     <nav className="navContainer">
       <img src="/images/logo.png" alt="dream view" />
       <div className="navRightButtonsWrapper">
-        {buttonOptions.map((option) => {
+        {buttonOptions.map((option, index) => {
+          const className =
+            index === 0
+              ? isFeaturedHovered
+                ? "selectedButton"
+                : "nonSelectedButton"
+              : !isFeaturedHovered
+                ? "selectedButton"
+                : "nonSelectedButton";
           return (
             <button
+              className={`${className} basisButton`}
               key={buttonOptions.indexOf(option)}
-              className={`${
-                isFeaturedHovered ? "selectedButton" : "nonSelectedButton"
-              } basisButton`}
               onMouseEnter={option.onMouseEnter}
               onMouseLeave={option.onMouseLeave}
               onClick={option.onClick}
