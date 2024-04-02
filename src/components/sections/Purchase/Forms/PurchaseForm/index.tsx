@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { compareAsc, parse } from "date-fns";
 import { datesArr } from "../../../../../helpers/date";
 import {

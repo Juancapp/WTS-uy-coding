@@ -3,7 +3,7 @@ import "./index.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Rating from "./Rating";
-import { Dispatch, SetStateAction, useEffect } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import MovieTicket from "../../../assets/MovieTicket";
 import View from "../../../assets/View";
 import { useMoviesStore } from "../../../../zustand/store";
@@ -17,8 +17,22 @@ function HomeSlider({
     state.moviesData.filter((movie) => movie.featured)
   );
 
+  const [width, setWidth] = useState(window.innerWidth);
+
   const randomNumber =
     moviesData && Math.floor(Math.random() * moviesData?.length);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     const movie = moviesData && moviesData[0];
@@ -36,7 +50,7 @@ function HomeSlider({
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 7000,
+    autoplaySpeed: width < 768 ? 4000 : 7000,
     pauseOnHover: false,
     arrows: true,
     beforeChange: (_current: number, next: number) => {

@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import Slider from "react-slick";
 import { MovieType } from "../../../../types";
 import "./index.css";

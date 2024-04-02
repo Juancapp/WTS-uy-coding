@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import Navbar from "./components/layout/Navbar";
 import "./App.css";
 import Home from "./components/sections/Home";
