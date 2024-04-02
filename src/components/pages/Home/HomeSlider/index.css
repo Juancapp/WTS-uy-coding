@@ -5,9 +5,9 @@
   background-size: cover;
 }
 
-h1 {
+.movieAndBuyContainer h1 {
   text-align: center;
-  font-weight: 200;
+  font-weight: 400;
   color: white;
 }
 
@@ -104,15 +104,16 @@ h1 {
   .cardContainer h1 {
     font-size: 42px;
     font-weight: lighter;
-    color: white;
   }
 
-  .movieInfo h2 {
-    font-size: clamp(24px, 4vw, 69px);
-    font-weight: 300;
-    margin-bottom: 20px;
+  .movieInfo h1 {
     display: inline-block;
+    margin-bottom: 20px;
+    text-align: start;
     border-bottom: 2px solid black;
+    color: black;
+    font-weight: 300;
+    font-size: clamp(24px, 4vw, 69px);
   }
 
   .slick-prev,

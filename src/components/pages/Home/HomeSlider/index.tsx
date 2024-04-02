@@ -59,7 +59,7 @@ function HomeSlider({
             />
             <div className="movieAndBuyContainer">
               <div className="movieInfo">
-                <h2>{movie.title}</h2>
+                <h1>{movie.title}</h1>
                 <p>{movie.description}</p>
               </div>
               <h1>{movie.title}</h1>

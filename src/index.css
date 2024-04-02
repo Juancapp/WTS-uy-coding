@@ -10,6 +10,10 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+h1 {
+  color: white;
+}
+
 @font-face {
   font-family: "Inter";
   src: url("./fonts/Inter-Thin.ttf") format("truetype");
