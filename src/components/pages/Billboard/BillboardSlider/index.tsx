@@ -13,10 +13,11 @@ function BillboardSlider() {
 
   const settings = {
     infinite: true,
-    speed: 1000,
+    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: false,
+    arrows: width > 768,
+    swipe: width < 768,
     beforeChange: () => {
       setIsSwiping(true);
     },
@@ -27,10 +28,11 @@ function BillboardSlider() {
 
   const mobileSettings = {
     ...settings,
-    className: "center",
-    centerPadding: "90px",
-    slidesToShow: 2,
+    centerPadding: "70px",
+    slidesToShow: 1,
+    slidesToScroll: 1,
     swipeToSlide: true,
+    centerMode: true,
   };
 
   const settingsToComponents = width < 768 ? mobileSettings : settings;
