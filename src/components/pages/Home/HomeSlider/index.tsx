@@ -49,8 +49,8 @@ function HomeSlider({
     <Slider {...settings}>
       {moviesData?.map((movie) => {
         return (
-          <div className="cardContainer">
-            <Rating rating={movie.rating} />
+          <div className="cardContainer" key={movie.url}>
+            <Rating rating={movie.rating} key={movie.url} />
             <div
               className="image"
               style={{

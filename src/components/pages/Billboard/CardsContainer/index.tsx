@@ -6,7 +6,7 @@ function CardsContainer({ data }: { data: MovieType[] }) {
   return (
     <div className="cardsContainer">
       {data.map((movie) => {
-        return <Card movieData={movie} />;
+        return <Card movieData={movie} key={movie.url} />;
       })}
     </div>
   );

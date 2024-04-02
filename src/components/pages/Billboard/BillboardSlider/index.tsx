@@ -67,12 +67,12 @@ function BillboardSlider() {
   return (
     <Slider {...settingsToComponents}>
       {width > 768
-        ? moviesArrays.map((moviesData) => {
-            return <CardsContainer data={moviesData} />;
+        ? moviesArrays.map((moviesData, index) => {
+            return <CardsContainer data={moviesData} key={index} />;
           })
         : moviesData?.map((movie) => {
             return (
-              <div className="sliderCardContainer">
+              <div className="sliderCardContainer" key={movie.url}>
                 <Card movieData={movie} />
               </div>
             );
