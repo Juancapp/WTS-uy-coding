@@ -49,6 +49,7 @@ function Navbar() {
         {buttonOptions.map((option) => {
           return (
             <button
+              key={buttonOptions.indexOf(option)}
               className={`${
                 isFeaturedHovered ? "selectedButton" : "nonSelectedButton"
               } basisButton`}
