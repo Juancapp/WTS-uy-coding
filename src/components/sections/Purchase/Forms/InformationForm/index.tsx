@@ -49,6 +49,11 @@ function InformationForm({
               value: 4,
               message: "El nombre debe tener al menos 4 caracteres",
             },
+            pattern: {
+              value: /^[a-zA-ZÀ-ÿ\u00f1\u00d1 ]+$/,
+              message:
+                "El nombre no puede contener números ni caracteres especiales",
+            },
             validate: {
               noLeadingTrailingSpaces: (value) =>
                 (!value.startsWith(" ") && !value.endsWith(" ")) ||

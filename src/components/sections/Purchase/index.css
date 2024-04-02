@@ -10,11 +10,13 @@
   padding-inline: 6%;
 }
 
-.successTitle {
+.purchaseContainer .successTitle {
+  display: inline-block;
   order: 1;
+  text-align: center;
 }
 
-.purchaseContainer > div:first-child.successWrapper {
+.successWrapper {
   align-items: center;
 }
 
