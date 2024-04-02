@@ -6,22 +6,14 @@ import {
 import "./index.css";
 import { PurchaseStateEnum } from "../../Purchase/types";
 
-function Card({
-  movieData,
-  isSwiping,
-}: {
-  movieData: MovieType;
-  isSwiping: boolean;
-}) {
+function Card({ movieData }: { movieData: MovieType }) {
   const { setSelectedMovie, selectedMovie } = useMoviesStore((state) => state);
   const { setPurchaseState } = usePurchaseStateStore((state) => state);
 
   const handleClick = () => {
-    if (!isSwiping) {
-      setPurchaseState(PurchaseStateEnum.MOVIE_FORM);
-      setSelectedMovie({ ...selectedMovie, title: movieData.title });
-      window.location.href = "#purchase";
-    }
+    setPurchaseState(PurchaseStateEnum.MOVIE_FORM);
+    setSelectedMovie({ ...selectedMovie, title: movieData.title });
+    window.location.href = "#purchase";
   };
 
   return (
