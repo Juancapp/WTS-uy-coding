@@ -1,11 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./index.css";
 import HomeSlider from "./HomeSlider";
 
 function Home() {
   const [imgURL, setImgURL] = useState("");
-
-  useEffect(() => {}, [imgURL]);
 
   return (
     <section
