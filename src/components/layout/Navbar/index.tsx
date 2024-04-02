@@ -44,7 +44,12 @@ function Navbar() {
 
   return (
     <nav className="navContainer">
-      <img src="/images/logo.png" alt="dream view" />
+      <img
+        onClick={() => (window.location.href = "#home")}
+        className="logo"
+        src="/images/logo.png"
+        alt="dream view"
+      />
       <div className="navRightButtonsWrapper">
         {buttonOptions.map((option, index) => {
           const className =
